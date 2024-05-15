@@ -11,8 +11,7 @@ public class GameManager : MonoBehaviour
     private int collectiblesNumber;
     public TMP_Text totalCollectiblesNumbersText;
     private int totalcollectiblesNumber;
-
-    public bool controladorpuerta = false;
+    public bool parametroPuerta = false; 
     void Start()
     {
         totalcollectiblesNumber = transform.childCount;
@@ -21,7 +20,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 3 && controladorpuerta == false){
+        if (SceneManager.GetActiveScene().buildIndex >= 3 && parametroPuerta == false){
             FindAnyObjectByType<Puerta>().apertura();
         }
         NextLevel();
@@ -35,7 +34,6 @@ public class GameManager : MonoBehaviour
     public void NextLevel(){
         if (transform.childCount <= 0){
            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);     
-        }
-        
+        }   
     }
 }

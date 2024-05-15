@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
 {
   private NavMeshAgent navMeshAgent;
   private Transform playerTransform; 
-
+  [SerializeField] public AudioClip soundkill;
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -22,8 +22,10 @@ public class Enemy : MonoBehaviour
     private void OnCollisionEnter (Collision collision)
     {
         if (collision.transform.CompareTag("Player"))
-        {
-           SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);    
+        {   
+            ControladordeSonido.instance.Ejecutarsonido(soundkill);
+            Destroy(FindAnyObjectByType<Player>());
+            FindAnyObjectByType<Pause>().die();
         }
     } 
 }

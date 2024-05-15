@@ -7,7 +7,7 @@ public class Final : MonoBehaviour
 {
     public void Return()
     {
-        SceneManager.LoadScene(0);  
+        SceneManager.LoadScene(0);    
     }
     public void Quit()
     {

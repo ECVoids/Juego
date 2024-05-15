@@ -9,8 +9,8 @@ public class Puerta : MonoBehaviour
     public void apertura ()
     {
         if (tomadellave == true){
+            FindAnyObjectByType<GameManager>().parametroPuerta = true;
             Destroy(gameObject);
-            FindAnyObjectByType<GameManager>().controladorpuerta = true;
         }
     }
 }
