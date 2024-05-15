@@ -34,7 +34,7 @@ public class ControladordeSonido : MonoBehaviour
             playear();
             parametroMusica = 2;
         }
-        if (SceneManager.GetActiveScene().buildIndex == 7){
+        if (SceneManager.GetActiveScene().buildIndex == 8){
             parametroMusica = 1;
         }
         if (parametroMusica == 1){
